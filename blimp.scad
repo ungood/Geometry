@@ -73,6 +73,18 @@ module jelly_donut(inner_radius, donut_radius) {
     circle(r = donut_radius);
 }
 
+module tree(height, width) {
+    // trunk
+    color("#705000")
+    
+    cylinder(h = height, r = width);
+    
+    //leaves
+    color("#405000")
+translate([0, 0, height])
+    cylinder(h = height + 10, r1 = width + 5, r2 = 0);
+}
+
 //hull()
 //for(x = [-1, 1]) {
 //    for(y = [-1, 1]) {
@@ -90,3 +102,7 @@ blimp();
 house();
 
 ground();
+
+translate([-13, -5, 0])
+
+tree(10, 3);
